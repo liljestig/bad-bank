@@ -1,32 +1,25 @@
 function AllData() {
     const ctx = React.useContext(UserContext);
     return (
-        <Card
-            bgcolor="light"
-            txtcolor="dark"
-            header="All Data"
-            title="All the bank's account data is listed below"
-            text="Be careful to use any data with an honest intention."
-            body={(<table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Balance</th>
+        <table className="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {ctx.users.map((user, index) => (
+                    <tr key={index}>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.password}</td>
+                        <td>${user.balance}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {ctx.users.map((user, index) => (
-                        <tr key={index}>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.password}</td>
-                            <td>${user.balance}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>)}
-        />
+                ))}
+            </tbody>
+        </table>
     );
 }
