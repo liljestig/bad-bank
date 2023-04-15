@@ -3,12 +3,6 @@ const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
 const UserContext = React.createContext(null);
 
-const [loggedInUser, setLoggedInUser] = useState(null);
-
-function updateUser(user) {
-    setLoggedInUser(user);
-}
-
 function Card(props){
     function classes(){
         const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
