@@ -8,7 +8,7 @@ function Balance() {
             header="Balance"
             body={show ? (
                 <>
-                $1,000,000.00<br/>
+                {user.email}<br/>
                 </>
             ):(
                 <>

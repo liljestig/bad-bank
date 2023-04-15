@@ -19,7 +19,6 @@ function Login() {
         if (!validate(email,    'email'))    return;
         if (!validate(password, 'password')) return;
         const user = ctx.users.find((user) => user.email === email && user.password === password);
-        updateUser(user);
         setShow(false);
     }
 
