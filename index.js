@@ -1,4 +1,5 @@
 function Spa() {
+    const [user, setUser] = React.useState(null);    
     return (
         <HashRouter>
             <NavBar/>
