@@ -2,7 +2,6 @@ function AllData() {
     const ctx = React.useContext(UserContext);
     return (
         <Card
-            style={{ width: '35rem' }}
             bgcolor="light"
             txtcolor="dark"
             header="All Data"
