@@ -9,7 +9,7 @@ function CreateAccount() {
     function validate(field, label){
         if (!field) {
             setStatus('Error: ' + label);
-            setTimeout(() => setStatus(''),3000);
+            setTimeout(() => setStatus(''), 3000);
             return false;
         }
         return true;
