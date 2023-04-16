@@ -1,4 +1,4 @@
-function Spa() {    
+function Spa() {
     return (
         <HashRouter>
             <NavBar/>
