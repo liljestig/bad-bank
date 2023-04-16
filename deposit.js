@@ -41,6 +41,10 @@ function Deposit() {
             ):(
                 <>
                 <h5>Success</h5>
+                <p>
+                    Deposit ${depositAmount} received.<br/>
+                    New balance: ${ctx.users[0].balance}
+                </p>
                 <button type="submit" className="btn btn-secondary" onClick={clearForm}>Make another deposit</button>
                 </>
             )}

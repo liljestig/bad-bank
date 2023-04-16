@@ -41,6 +41,10 @@ function Withdraw() {
             ):(
                 <>
                 <h5>Success</h5>
+                <p>
+                    Withdraw ${withdrawAmount} processed.<br/>
+                    New balance: ${ctx.users[0].balance}
+                </p>
                 <button type="submit" className="btn btn-secondary" onClick={clearForm}>Make another withdraw</button>
                 </>
             )}
