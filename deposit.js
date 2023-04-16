@@ -6,7 +6,13 @@ function Deposit() {
 
     function handleDeposit(){
         console.log(depositAmount);
+        ctx.users[0].balance = Number(ctx.users[0].balance) + Number(depositAmount);
         setShow(false);
+    }
+
+    function clearForm(){
+        setDepositAmount('');
+        setShow(true);
     }
 
     return (
@@ -23,7 +29,7 @@ function Deposit() {
                                 Balance
                             </td>
                             <td>
-                                $1,000,000.00
+                                ${ctx.users[0].balance}
                             </td>
                         </tr>
                     </tbody>
@@ -35,6 +41,7 @@ function Deposit() {
             ):(
                 <>
                 <h5>Success</h5>
+                <button type="submit" className="btn btn-secondary" onClick={clearForm}>Make another deposit</button>
                 </>
             )}
         />

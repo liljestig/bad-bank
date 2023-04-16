@@ -6,7 +6,13 @@ function Withdraw() {
 
     function handleWithdraw(){
         console.log(withdrawAmount);
+        ctx.users[0].balance = Number(ctx.users[0].balance) - Number(withdrawAmount);
         setShow(false);
+    }
+
+    function clearForm(){
+        setWithdrawAmount('');
+        setShow(true);
     }
 
     return (
@@ -23,7 +29,7 @@ function Withdraw() {
                                 Balance
                             </td>
                             <td>
-                                $1,000,000.00
+                                ${ctx.users[0].balance}
                             </td>
                         </tr>
                     </tbody>
@@ -35,6 +41,7 @@ function Withdraw() {
             ):(
                 <>
                 <h5>Success</h5>
+                <button type="submit" className="btn btn-secondary" onClick={clearForm}>Make another withdraw</button>
                 </>
             )}
         />
